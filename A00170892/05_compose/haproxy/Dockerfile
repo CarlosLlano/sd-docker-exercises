@@ -1,9 +1,8 @@
 FROM centos:latest
 
 RUN yum -y install wget && yum -y install unzip && yum -y install haproxy
-ENV CONSUL_URL 172.17.0.2:8500
-ENV CONSUL_TEMPLATE_VERSION 0.19.3
 
+ENV CONSUL_TEMPLATE_VERSION 0.19.3
 
 ADD https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_SHA256SUMS /tmp/
 ADD https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip /tmp/
